@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/api_url_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="api_url"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/api_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/api_url_label"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/api_url_label"
+        android:ems="10"
+        android:hint="ex. http://example.org/script" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/message_matches_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/api_url"
+        android:layout_marginTop="15dp"
+        android:text="message_matches (regex)"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/message_matches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/message_matches_label"
+        android:layout_alignRight="@+id/api_url"
+        android:layout_below="@+id/message_matches_label"
+        android:ems="10"
+        android:hint="ex. (.*)keyword(.*)" />
+
+    <TextView
+        android:id="@+id/from_matches_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/message_matches"
+        android:layout_below="@+id/message_matches"
+        android:layout_marginTop="15dp"
+        android:text="from_matches (regex)"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/from_matches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/from_matches_label"
+        android:layout_alignRight="@+id/message_matches"
+        android:layout_below="@+id/from_matches_label"
+        android:ems="10"
+        android:hint="ex. \\+12345678" />
+
+    <EditText
+        android:id="@+id/secret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/secret_label"
+        android:layout_alignRight="@+id/from_matches"
+        android:layout_below="@+id/from_matches"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:hint="secret" />
+
+    <TextView
+        android:id="@+id/secret_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/from_matches"
+        android:layout_below="@+id/from_matches"
+        android:layout_marginTop="16dp"
+        android:text="secret"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
