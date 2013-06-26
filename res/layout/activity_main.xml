@@ -21,11 +21,11 @@
         android:id="@+id/api_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/api_url_label"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/api_url_label"
         android:ems="10"
-        android:hint="ex. http://example.org/script" >
+        android:hint="ex. https://example.org/script" >
 
         <requestFocus />
     </EditText>
@@ -44,8 +44,8 @@
         android:id="@+id/message_matches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/message_matches_label"
-        android:layout_alignRight="@+id/api_url"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/message_matches_label"
         android:ems="10"
         android:hint="ex. (.*)keyword(.*)" />
@@ -64,8 +64,8 @@
         android:id="@+id/from_matches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/from_matches_label"
-        android:layout_alignRight="@+id/message_matches"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/from_matches_label"
         android:ems="10"
         android:hint="ex. \\+12345678" />
@@ -74,12 +74,11 @@
         android:id="@+id/secret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/secret_label"
-        android:layout_alignRight="@+id/from_matches"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/from_matches"
-        android:layout_marginTop="88dp"
-        android:ems="10"
-        android:hint="secret" />
+        android:layout_marginTop="42dp"
+        android:ems="10"/>
 
     <TextView
         android:id="@+id/secret_label"
@@ -90,5 +89,24 @@
         android:layout_marginTop="16dp"
         android:text="secret"
         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/user_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/secret"
+        android:layout_below="@+id/secret"
+        android:layout_marginTop="24dp"
+        android:text="user"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/user_label"
+        android:ems="10"/>
 
 </RelativeLayout>

@@ -17,16 +17,18 @@ public class Logic {
         String from_matches = MainActivity.getPreferences().getString(MainActivity.FROM_MATCHES, "");
 		String message_matches = MainActivity.getPreferences().getString(MainActivity.MESSAGE_MATCHES, "");
         String secret = MainActivity.getPreferences().getString(MainActivity.SECRET, "");
+        String user = MainActivity.getPreferences().getString(MainActivity.USER, "");
         
         if (from.matches(from_matches)) {
         	Matcher m = Pattern.compile(message_matches).matcher(body);
         	if (m.find()) {
         		String message = m.group(1);
-        		String digest = Tools.hmacDigest(from + body, secret, "HmacSHA256");
+        		String digest = Tools.hmacDigest(from + body + user, secret, "HmacSHA256");
         		
         		new SendTask(api_url,
         				"from=" + URLEncoder.encode(from) +
         				"&message=" + URLEncoder.encode(message) +
+        				"&user=" + URLEncoder.encode(user) +
         				"&digest=" + digest,
         				new SuccessCallback() {
     				public void onSuccess(String response) {
